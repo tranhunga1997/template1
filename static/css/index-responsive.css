@@ -39,11 +39,22 @@
         z-index: 3;
     }
 
+    @keyframes mobile-navbar-fade {
+        from {
+            width: 0%;
+        }
+
+        to {
+            width: calc(100%/1.5);
+        }
+    }
+
     .mobile-navbar-modal-container {
         position: relative;
         width: calc(100%/1.5);
         height: 100%;
         background-color: #fff;
+        animation: mobile-navbar-fade ease-in-out 0.5s;
     }
     
     .mobile-navbar-modal-container .mobile-modal-header {
