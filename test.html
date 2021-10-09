@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./static/css/test.css">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-navbar">
+            <div class="top-navbar__mobile js-mobile-navbar">
+                <i class="bi bi-list"></i>
+            </div>
+            <ul class="top-navbar__list">
+                <li class="top-navbar__item">
+                    <a href="">Tài khoản</a>
+                    <ul class="sub-top-navbar__list">
+                        <li class="sub-top-navbar__item "><a href="">Đăng nhập</a></li>
+                        <li class="sub-top-navbar__item"><a href="">Đăng ký</a></li>
+                    </ul>
+                </li>
+                <li class="top-navbar__item">
+                    <a href="">Giỏ hàng</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mobile-navbar-modal">
+        <div class="mobile-navbar-modal-container">
+            <div class="modal-header">
+                <div class="close-btn js-close">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-body">
+                <ul class="navbar-list">
+                    <li class="navbar-item"><a href="">Thương hiệu <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Đồng hồ <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Túi xách <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Nước hoa <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Mỹ phẩm <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Giày <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Thời trang <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Mũ nón <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Kính mắt <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Son môi <i class="bi bi-arrow-right-circle"></i> </a></li>
+                    <li class="navbar-item"><a href="">Mã giảm giá <i class="bi bi-arrow-right-circle"></i> </a></li>
+                </ul>
+
+                <ul class="navbar-user-list">
+                    <li class="navbar-user-item"><a href="">Đăng nhập</a></li>
+                    <li class="navbar-user-item"><a href="">Đăng ký</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // mobile navbar modal box
+        const btnNavbarOpen = $(".js-mobile-navbar");
+        const modalBox = $(".mobile-navbar-modal");
+        const modalBoxContainer = $(".mobile-navbar-modal-container");
+        const btnNavbarClose = $(".js-close");
+
+        function hiddenModal() {
+            if (modalBox.hasClass("open")) {
+                modalBox.removeClass("open");
+            }
+        }
+
+        function openModal() {
+            if (!modalBox.hasClass("open")) {
+                modalBox.addClass("open");
+            }
+        }
+
+        btnNavbarOpen.click(openModal);
+        btnNavbarClose.click(hiddenModal);
+        modalBox.click(hiddenModal);
+        modalBoxContainer.click(function(e){
+            e.stopPropagation();
+        })
+    </script>
+</body>
+
+</html>
